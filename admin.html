@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Write · Han YH Dev Blog</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Back to blog">
+        <span class="brand-mark">~/</span>
+        <span>hyh.qd.je</span>
+      </a>
+      <nav class="nav">
+        <a href="./">Posts</a>
+        <a href="admin.html" aria-current="page">Write</a>
+        <a href="https://github.com/hyuhao2000/hyuhao2000.github.io" rel="noreferrer">Repo</a>
+      </nav>
+    </header>
+
+    <main class="site-shell writer-shell">
+      <section class="writer-grid">
+        <form id="postForm" class="writer-form">
+          <div class="terminal-line">
+            <span class="prompt">$</span>
+            <span>new-post --draft</span>
+          </div>
+
+          <label>
+            <span>Title</span>
+            <input id="title" name="title" type="text" placeholder="A concise title" required>
+          </label>
+
+          <div class="field-row">
+            <label>
+              <span>Slug</span>
+              <input id="slug" name="slug" type="text" placeholder="short-url-slug" required>
+            </label>
+            <label>
+              <span>Date</span>
+              <input id="date" name="date" type="date" required>
+            </label>
+          </div>
+
+          <label>
+            <span>Tags</span>
+            <input id="tags" name="tags" type="text" placeholder="GitHub Pages, DNS, JavaScript">
+          </label>
+
+          <label>
+            <span>Excerpt</span>
+            <textarea id="excerpt" name="excerpt" rows="3" placeholder="One paragraph summary"></textarea>
+          </label>
+
+          <label>
+            <span>Content</span>
+            <textarea id="content" name="content" rows="16" placeholder="# Heading&#10;&#10;Write with Markdown-like syntax."></textarea>
+          </label>
+
+          <div class="button-row">
+            <button type="button" id="previewBtn">Preview</button>
+            <button type="button" id="saveDraftBtn">Save Draft</button>
+            <button type="button" id="generateBtn" class="primary-button">Generate Entry</button>
+          </div>
+        </form>
+
+        <section class="writer-output">
+          <div class="terminal-line">
+            <span class="prompt">&gt;</span>
+            <span>preview / export</span>
+          </div>
+          <article id="preview" class="post-body preview-body"></article>
+          <label>
+            <span>posts.js entry</span>
+            <textarea id="output" rows="14" spellcheck="false"></textarea>
+          </label>
+          <div class="button-row">
+            <button type="button" id="copyBtn">Copy Entry</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="assets/core.js"></script>
+    <script src="assets/admin.js"></script>
+  </body>
+</html>
